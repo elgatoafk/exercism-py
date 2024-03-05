@@ -16,8 +16,8 @@ def is_criticality_balanced(temperature, neutrons_emitted):
 
     return (
         temperature < 800
-        or neutrons_emitted > 500
-        or temperature * neutrons_emitted < 500000
+        and neutrons_emitted > 500
+        and temperature * neutrons_emitted < 500000
     )
 
 
