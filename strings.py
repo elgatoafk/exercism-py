@@ -42,7 +42,11 @@ def remove_suffix_ness(word):
     For example: "heaviness" becomes "heavy", but "sadness" becomes "sad".
     """
 
-    pass
+    no_suff = word.split("ness")
+    letters = list(no_suff[0])
+    if letters[-1] == "i":
+        letters[-1] = "y"
+    return "".join(letters)
 
 
 def adjective_to_verb(sentence, index):
@@ -55,4 +59,6 @@ def adjective_to_verb(sentence, index):
     For example, ("It got dark as the sun set.", 2) becomes "darken".
     """
 
-    pass
+    sentence = sentence.split(" ")
+    return f"{sentence[index].replace(".", "")}en"
+
