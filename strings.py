@@ -29,7 +29,7 @@ def make_word_groups(vocab_words):
     vocab_words.pop(0)
     joined_string = f"{prefix}"
     for item in vocab_words:
-        joined_string += f" :: {item}"
+        joined_string += f" :: {prefix}{item}"
     return joined_string
 
 
@@ -60,5 +60,5 @@ def adjective_to_verb(sentence, index):
     """
 
     sentence = sentence.split(" ")
-    return f"{sentence[index].replace(".", "")}en"
-
+    word = sentence[index].replace(".", "")
+    return f"{word}en"
